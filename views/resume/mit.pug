@@ -1,0 +1,105 @@
+extends ../layout
+
+block content
+    if settings && settings.alllow_pdf_dowload
+        .d-flex.justify-content-end.mb-3
+            a.btn.btn-primary.me-2(href=`/${username}/${repo}/download/pdf`)
+                i.fas.fa-download.me-2
+                | Download PDF
+
+    .resume-container
+        header.text-center.mb-4
+            h1.display-4= resume.profile.full_name
+            h2.text-muted= resume.profile.title
+            p.lead= resume.profile.summary
+
+        .row
+            .col-md-8
+                // Experience Section
+                section.mb-5
+                    h3.border-bottom.pb-2 Professional Experience
+                    each job in resume.experience
+                        .experience-item.mb-4
+                            h4= job.role
+                            h5.text-muted= job.company
+                            p.mb-1
+                                | #{job.start} - #{job.end}
+                                if job.location
+                                    |  | #{job.location}
+                            if job.description
+                                p.mb-2= job.description
+                            if job.responsibilities
+                                ul.list-unstyled
+                                    each resp in job.responsibilities
+                                        li.mb-1 • #{resp}
+
+                // Projects Section
+                if resume.projects && resume.projects.length
+                    section.mb-5
+                        h3.border-bottom.pb-2 Projects
+                        each project in resume.projects
+                            .project-item.mb-3
+                                h4= project.name
+                                p= project.description
+
+            .col-md-4
+                // Contact Information
+                section.mb-4
+                    h3.border-bottom.pb-2 Contact
+                    ul.list-unstyled
+                        if resume.contact.email
+                            li.mb-2
+                                i.fas.fa-envelope.me-2
+                                = resume.contact.email
+                        if resume.contact.phone
+                            li.mb-2
+                                i.fas.fa-phone.me-2
+                                = resume.contact.phone
+                        if resume.contact.website
+                            li.mb-2
+                                i.fas.fa-globe.me-2
+                                a(href=resume.contact.website)= resume.contact.website
+
+                // Skills Section
+                section.mb-4
+                    h3.border-bottom.pb-2 Skills
+                    each skill in resume.skills
+                        .skill-item.mb-3
+                            .d-flex.justify-content-between.align-items-center.mb-1
+                                h5.mb-0= skill.name
+                                .text-muted
+                                    span.me-3 #{skill.years_experience} years
+                                    span.badge.bg-primary= skill.level
+                            .progress
+                                .progress-bar(role="progressbar" style=`width: ${(skill.years_experience / 20) * 100}%`)
+                                    span.sr-only #{skill.years_experience} years
+
+                // Education Section
+                section.mb-4
+                    h3.border-bottom.pb-2 Education
+                    each edu in resume.education
+                        .education-item.mb-3
+                            h4= edu.degree
+                            h5.text-muted= edu.institution
+                            p #{edu.start_year} - #{edu.end_year}
+
+                // Languages Section
+                if resume.languages
+                    section.mb-4
+                        h3.border-bottom.pb-2 Languages
+                        each lang, code in resume.languages
+                            .language-item.mb-2
+                                strong #{code.toUpperCase()}: 
+                                span= lang.level
+
+                // Certifications Section
+                if resume.certifications && resume.certifications.length
+                    section.mb-4
+                        h3.border-bottom.pb-2 Certifications
+                        each cert in resume.certifications
+                            .certification-item.mb-2
+                                h5.mb-1= cert.name
+                                p.mb-0
+                                    | #{cert.issuer} (#{cert.year})
+                                    if cert.id
+                                        |  - ID: #{cert.id}

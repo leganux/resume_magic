@@ -1,0 +1,153 @@
+extends layout
+
+block content
+  .container
+    .row.justify-content-center
+      .col-md-10
+        h1.display-4.mb-4 Get Your Own Resume
+        p.lead.mb-5 Create your own dynamic resume in just a few steps. Host it on GitHub and share it with the world!
+        
+        .card.mb-5
+          .card-body
+            h2.card-title.mb-4 How It Works
+            ol.list-group.list-group-numbered.mb-4
+              li.list-group-item
+                h5 Create a GitHub Repository
+                p Create a new public repository on GitHub to host your resume files.
+              
+              li.list-group-item
+                h5 Add Your Resume Files
+                p Add the following JSON files to your repository:
+                ul.mb-3
+                  li 
+                    code index.json
+                    |  - Contains basic profile information and settings
+                  li 
+                    code resume.en.json
+                    |  - Your resume in English
+                  li 
+                    code resume.es.json
+                    |  - Your resume in Spanish (optional)
+                
+                .alert.alert-info
+                  h6.mb-2 File Structure Example:
+                  pre.mb-0
+                    code.
+                      {
+                        "version": "1.0.0",
+                        "profile": {
+                          "full_name": "Your Name",
+                          "title": "Your Title"
+                        },
+                        "variants": {
+                          "en": "resume.en.json",
+                          "es": "resume.es.json"
+                        },
+                        "settings": {
+                          "default_variant": "en",
+                          "theme": "modern",
+                          "alllow_pdf_dowload": true,
+                          "allow_html_download": true
+                        }
+                      }
+              
+              li.list-group-item
+                h5 Access Your Resume
+                p Your resume will be available at:
+                .alert.alert-success.mb-3
+                  code https://resumehub/username/repo
+                p For the modern theme, use:
+                .alert.alert-success
+                  code https://resumehub/username/repo/modern
+
+        .card.mb-5
+          .card-body
+            h2.card-title.mb-4 Resume JSON Schema
+            p Your resume should follow this structure:
+            pre
+              code.
+                {
+                  "profile": {
+                    "full_name": "String",
+                    "title": "String",
+                    "photography": "URL (optional)",
+                    "banner": "URL (optional)",
+                    "summary": "String",
+                    "birth_date": "YYYY-MM-DD",
+                    "location": {
+                      "city": "String",
+                      "state": "String",
+                      "country": "String"
+                    }
+                  },
+                  "contact": {
+                    "email": "String",
+                    "phone": "String",
+                    "website": "URL",
+                    "social": {
+                      "platform": "URL"
+                    }
+                  },
+                  "skills": [{
+                    "name": "String",
+                    "category": "String",
+                    "years_experience": "Number",
+                    "level": "String",
+                    "description": "String"
+                  }],
+                  "experience": [{
+                    "role": "String",
+                    "company": "String",
+                    "start": "YYYY-MM",
+                    "end": "YYYY-MM or 'Present'",
+                    "location": "String",
+                    "description": "String",
+                    "responsibilities": ["String"],
+                    "tools": ["String"]
+                  }],
+                  "education": [{
+                    "degree": "String",
+                    "institution": "String",
+                    "start_year": "Number",
+                    "end_year": "Number"
+                  }],
+                  "certifications": [{
+                    "name": "String",
+                    "issuer": "String",
+                    "year": "Number",
+                    "id": "String (optional)"
+                  }]
+                }
+
+        .card.mb-5
+          .card-body
+            h2.card-title.mb-4 Features
+            .row
+              .col-md-4.mb-4
+                .card.h-100.bg-light
+                  .card-body
+                    h5.card-title Multiple Languages
+                    p Support for multiple language variants of your resume.
+              
+              .col-md-4.mb-4
+                .card.h-100.bg-light
+                  .card-body
+                    h5.card-title Two Themes
+                    p Choose between MIT (minimal) and Modern themes.
+              
+              .col-md-4.mb-4
+                .card.h-100.bg-light
+                  .card-body
+                    h5.card-title PDF Export
+                    p Download your resume as a PDF file.
+
+        .card
+          .card-body
+            h2.card-title.mb-4 Need Help?
+            p Check out our example repository:
+            .alert.alert-info.mb-4
+              a(href="https://github.com/leganux/resume" target="_blank") github.com/leganux/resume
+            
+            p.mb-0 For more information or support, visit our 
+              a(href="https://github.com/leganux/resume_magic" target="_blank") GitHub repository
+              | .

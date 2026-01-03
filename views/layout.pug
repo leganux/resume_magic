@@ -1,0 +1,62 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title #{title} - Resume Magic
+    - const theme = resume && resume.settings ? resume.settings.theme || 'flatly' : 'flatly'
+    link(rel="stylesheet", href=`https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/${theme}/bootstrap.min.css`)
+    link(rel="stylesheet", href="/css/style.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css")
+    script(src="/jquery/jquery.min.js")
+    script(src="/bootstrap/js/bootstrap.bundle.min.js")
+    block styles
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+      .container
+        a.navbar-brand(href="/") Resume Magic
+        button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarNav")
+          span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+          ul.navbar-nav.ms-auto
+            if resume
+              if resume.variants
+                li.nav-item.dropdown
+                  a.nav-link.dropdown-toggle(href="#" role="button" data-bs-toggle="dropdown")
+                    i.fas.fa-language.me-1
+                    | Language
+                  ul.dropdown-menu
+                    each file, lang in resume.variants
+                      li
+                        a.dropdown-item(href=`/${username}/${repo}/${format || ''}?lang=${lang}`)= lang.toUpperCase()
+              if resume.settings
+                li.nav-item.dropdown
+                  a.nav-link.dropdown-toggle(href="#" role="button" data-bs-toggle="dropdown")
+                    i.fas.fa-palette.me-1
+                    | Theme
+                  ul.dropdown-menu
+                    each theme in ['cerulean', 'cosmo', 'cyborg', 'darkly', 'flatly', 'journal', 'litera', 'lumen', 'lux', 'materia', 'minty', 'morph', 'pulse', 'quartz', 'sandstone', 'simplex', 'sketchy', 'slate', 'solar', 'spacelab', 'superhero', 'united', 'vapor', 'yeti', 'zephyr']
+                      li
+                        a.dropdown-item(href=`/${username}/${repo}/${format || ''}?theme=${theme}`)= theme
+                if resume.settings.allow_pdf_download
+                  li.nav-item
+                    a.btn.btn-primary.nav-link(href=`/${username}/${repo}/download/pdf?format=${format || ''}&lang=${lang || ''}`)
+                      i.fas.fa-file-pdf.me-2
+                      | PDF
+                if resume.settings.allow_html_download
+                  li.nav-item
+                    a.btn.btn-primary.nav-link(href=`/${username}/${repo}/download/html?format=${format || ''}&lang=${lang || ''}`)
+                      i.fas.fa-file-code.me-2
+                      | HTML
+            li.nav-item
+              a.nav-link(href="/get-your-own") Get Your Own
+            li.nav-item
+              a.nav-link(href="/donate") Support Us
+
+    .container.mt-4
+      block content
+
+    footer.footer.mt-5.py-3.bg-light
+      .container.text-center
+        p.mb-0 Resume Magic - Create your own resume at 
+          a(href="/get-your-own") Get Your Own

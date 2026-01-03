@@ -1,0 +1,461 @@
+{
+    "version": "1.0.0",
+    "profile": {
+        "full_name": "Ángel Erick Cruz Olivera",
+        "photography": "https://erick_cruz.leganux.com/assets/profile.jpg",
+        "banner": "https://erick_cruz.leganux.com/assets/banner.jpg",
+        "title": "Senior Full-Stack Developer / CTO",
+        "summary": "Desarrollador Full-Stack con más de 17 años de experiencia. Creo firmemente que creer es crear, y a través del código estoy comprometido a hacer realidad mis sueños y ayudar a otros a alcanzar los suyos.",
+        "birth_date": "1993-04-11",
+        "age": 32,
+        "location": {
+            "city": "Pachuca",
+            "state": "Hidalgo",
+            "country": "México"
+        },
+        "education_level": "Licenciatura",
+        "freelance_available": true
+    },
+    "contact": {
+        "email": "erick.cruz@leganux.com",
+        "phone": "+52 7712276847",
+        "website": "https://erick_cruz.leganux.com",
+        "social": {
+            "facebook": "https://www.facebook.com/leganux",
+            "instagram": "https://www.instagram.com/leganux",
+            "linkedin": "https://www.linkedin.com/in/leganux/",
+            "github": "https://github.com/leganux/",
+            "npm": "https://www.npmjs.com/~leganux"
+        }
+    },
+    "metrics": {
+        "years_experience": 17,
+        "projects_completed": 80,
+        "clients": 45,
+        "tools_used": 70
+    },
+    "skills": [
+        {
+            "name": "HTML",
+            "category": "Frontend",
+            "years_experience": 17,
+            "level": "Avanzado",
+            "description": "Lenguaje de marcado para estructuración semántica y accesible de interfaces web."
+        },
+        {
+            "name": "CSS",
+            "category": "Frontend",
+            "years_experience": 17,
+            "level": "Avanzado",
+            "description": "Diseño visual, layouts responsivos, animaciones y diseño moderno."
+        },
+        {
+            "name": "JavaScript ES5+",
+            "category": "Frontend / Backend",
+            "years_experience": 14,
+            "level": "Avanzado",
+            "description": "Lógica de negocio, eventos, asincronía y arquitectura de aplicaciones."
+        },
+        {
+            "name": "PHP",
+            "category": "Backend",
+            "years_experience": 14,
+            "level": "Avanzado",
+            "description": "Desarrollo de APIs REST, sistemas empresariales y aplicaciones escalables."
+        },
+        {
+            "name": "Node.js",
+            "category": "Backend",
+            "years_experience": 10,
+            "level": "Avanzado",
+            "description": "Microservicios, APIs, sistemas distribuidos y backend moderno."
+        },
+        {
+            "name": "Git",
+            "category": "DevOps",
+            "years_experience": 14,
+            "level": "Avanzado",
+            "description": "Control de versiones y colaboración en equipo."
+        },
+        {
+            "name": "WordPress/CMS",
+            "category": "CMS",
+            "years_experience": 14,
+            "level": "Avanzado",
+            "description": "Desarrollo de temas, plugins y personalización de CMS."
+        },
+        {
+            "name": "AWS",
+            "category": "Cloud",
+            "years_experience": 10,
+            "level": "Intermedio-Avanzado",
+            "description": "Infraestructura cloud con EC2, S3, ECS, Fargate, IAM y Route53."
+        },
+        {
+            "name": "Dialogflow",
+            "category": "AI",
+            "years_experience": 5,
+            "level": "Intermedio-Avanzado",
+            "description": "Desarrollo de chatbots y asistentes virtuales."
+        },
+        {
+            "name": "Streaming/Broadcasting",
+            "category": "Media",
+            "years_experience": 7,
+            "level": "Avanzado",
+            "description": "Transmisión en vivo y gestión de contenido multimedia."
+        },
+        {
+            "name": "Producción Multimedia",
+            "category": "Media",
+            "years_experience": 7,
+            "level": "Intermedio-Avanzado",
+            "description": "Producción de audio, video y fotografía."
+        },
+        {
+            "name": "CI/CD",
+            "category": "DevOps",
+            "years_experience": 3,
+            "level": "Básico-Intermedio",
+            "description": "Jenkins, Copilot, Pulumi, GitHub Actions."
+        },
+        {
+            "name": "Lua",
+            "category": "Programming",
+            "years_experience": 5,
+            "level": "Intermedio",
+            "description": "Desarrollo de scripts y automatización."
+        },
+        {
+            "name": "SQL Databases",
+            "category": "Database",
+            "years_experience": 13,
+            "level": "Avanzado",
+            "description": "DB2, PostgreSQL, MySQL, SQLite, MariaDB, Oracle."
+        },
+        {
+            "name": "Firebase",
+            "category": "Database",
+            "years_experience": 4,
+            "level": "Intermedio",
+            "description": "Base de datos en tiempo real y servicios cloud."
+        },
+        {
+            "name": "MongoDB",
+            "category": "Database",
+            "years_experience": 8,
+            "level": "Avanzado",
+            "description": "Base de datos NoSQL y agregaciones."
+        },
+        {
+            "name": "Web Servers",
+            "category": "DevOps",
+            "years_experience": 14,
+            "level": "Avanzado",
+            "description": "NGINX, Apache, configuración y optimización."
+        },
+        {
+            "name": "Flutter/Dart",
+            "category": "Mobile",
+            "years_experience": 1,
+            "level": "Básico",
+            "description": "Desarrollo de aplicaciones móviles multiplataforma."
+        },
+        {
+            "name": "PhoneGap/Ionic",
+            "category": "Mobile",
+            "years_experience": 3,
+            "level": "Intermedio",
+            "description": "Desarrollo de aplicaciones híbridas."
+        },
+        {
+            "name": "Websockets",
+            "category": "Backend",
+            "years_experience": 3,
+            "level": "Intermedio",
+            "description": "Comunicación bidireccional en tiempo real."
+        },
+        {
+            "name": "OpenAI",
+            "category": "AI",
+            "years_experience": 1,
+            "level": "Intermedio",
+            "description": "Integración de IA generativa."
+        },
+        {
+            "name": "GraphQL",
+            "category": "API",
+            "years_experience": 1,
+            "level": "Básico",
+            "description": "APIs flexibles y eficientes."
+        },
+        {
+            "name": "UX Design",
+            "category": "Design",
+            "years_experience": 10,
+            "level": "Avanzado",
+            "description": "Diseño centrado en usuario y experiencia."
+        },
+        {
+            "name": "Team Leadership",
+            "category": "Management",
+            "years_experience": 5,
+            "level": "Avanzado",
+            "description": "Liderazgo de equipos técnicos y gestión de proyectos."
+        }
+    ],
+    "education": [
+        {
+            "degree": "Licenciatura en Sistemas Computacionales",
+            "institution": "Universidad Autónoma del Estado de Hidalgo",
+            "start_year": 2012,
+            "end_year": 2016
+        }
+    ],
+    "certifications": [
+        {
+            "name": "PHP Developer Senior Certified",
+            "issuer": "w3schools",
+            "year": 2018,
+            "id": "10050692"
+        },
+        {
+            "name": "Scrum Fundamentals Certified",
+            "issuer": "Scrumstudy",
+            "year": 2018,
+            "id": "655324"
+        },
+        {
+            "name": "UX Designer Course + Certified",
+            "issuer": "aprende.org",
+            "year": 2018,
+            "id": "h9mv72jae"
+        },
+        {
+            "name": "Database Admin Course + Certified",
+            "issuer": "aprende.org",
+            "year": 2018,
+            "id": "k54qmjv34"
+        },
+        {
+            "name": "Data Curator Course + Certified",
+            "issuer": "aprende.org",
+            "year": 2018,
+            "id": "uea6pb3ui"
+        },
+        {
+            "name": "TOEFL ITP",
+            "issuer": "ETS",
+            "year": 2015
+        }
+    ],
+    "experience": [
+        {
+            "role": "Senior Full Stack Developer",
+            "company": "Kingtide.com",
+            "start": "2023-10",
+            "end": "Present",
+            "location": "Remoto, México",
+            "description": "Desarrollo de servicios web API-REST para proyectos de clientes.",
+            "responsibilities": [
+                "Desarrollo de APIs REST",
+                "Integración de tecnologías de IA",
+                "Procesamiento de imágenes en tiempo real"
+            ],
+            "tools": [
+                "Supabase",
+                "NextJS",
+                "Python",
+                "Fal.ai"
+            ]
+        },
+        {
+            "role": "Consultor, Infraestructura y Operaciones",
+            "company": "Habits.ai",
+            "start": "2023-08",
+            "end": "Present",
+            "location": "Remoto, México",
+            "description": "Consultoría en escalabilidad y seguridad.",
+            "responsibilities": [
+                "Mantenimiento de escalabilidad del software",
+                "Toma de decisiones en mejoras y seguridad",
+                "Implementación de ISO 27001"
+            ],
+            "tools": [
+                "AWS",
+                "Docker",
+                "ISO 27001"
+            ]
+        },
+        {
+            "role": "Desarrollador Full-Stack",
+            "company": "CENACE",
+            "start": "2023-08",
+            "end": "2023-10",
+            "location": "Remoto, México",
+            "description": "Desarrollo de sistemas de evaluación y reportes.",
+            "responsibilities": [
+                "Desarrollo de sistemas de evaluación",
+                "Implementación de reportes de centros energéticos"
+            ],
+            "tools": [
+                "Python",
+                "Angular JS"
+            ]
+        },
+        {
+            "role": "CTO",
+            "company": "Habits.ai",
+            "start": "2020-07",
+            "end": "2023-08",
+            "location": "Remoto, México",
+            "description": "Dirección técnica y estratégica del producto.",
+            "responsibilities": [
+                "Dirección del desarrollo de la plataforma",
+                "Coordinación de entregables",
+                "Mantenimiento de escalabilidad",
+                "Implementación de ISO 27001"
+            ],
+            "tools": [
+                "AWS",
+                "Node.js",
+                "Docker",
+                "ISO 27001"
+            ]
+        },
+        {
+            "role": "Developer Team Leader/CTO",
+            "company": "OTECH",
+            "start": "2019-07",
+            "end": "2020-06",
+            "location": "Pachuca, Hidalgo, México",
+            "description": "Dirección del desarrollo de plataforma tecnológica.",
+            "responsibilities": [
+                "Dirección del desarrollo",
+                "Mantenimiento de escalabilidad"
+            ]
+        },
+        {
+            "role": "Senior PHP Developer",
+            "company": "SADER",
+            "start": "2018-07",
+            "end": "2019-06",
+            "location": "Delegación Benito Juárez CDMX, México",
+            "description": "Desarrollo de servicios API REST.",
+            "responsibilities": [
+                "Desarrollo de APIs REST para PROAGRO"
+            ],
+            "tools": [
+                "Laravel",
+                "PHP"
+            ]
+        },
+        {
+            "role": "Senior Fullstack Developer",
+            "company": "SCT",
+            "start": "2017-09",
+            "end": "2018-06",
+            "location": "Insurgentes Sur, México",
+            "description": "Desarrollo del sistema de Ventanilla Única Nacional."
+        },
+        {
+            "role": "Senior Full-Stack Developer",
+            "company": "SAGARPA",
+            "start": "2017-05",
+            "end": "2017-09",
+            "location": "Delegación Benito Juárez CDMX, México",
+            "description": "Desarrollo de servicios API REST.",
+            "responsibilities": [
+                "Desarrollo de APIs REST para PROAGRO y SURI"
+            ],
+            "tools": [
+                "Laravel",
+                "PHP"
+            ]
+        },
+        {
+            "role": "Fullstack Developer",
+            "company": "SCT",
+            "start": "2016-05",
+            "end": "2017-05",
+            "location": "Insurgentes Sur, México",
+            "description": "Desarrollo del sistema de intranet social.",
+            "tools": [
+                "WordPress"
+            ]
+        },
+        {
+            "role": "Streaming y Broadcasting",
+            "company": "Radio y Televisión de Hidalgo",
+            "start": "2015-01",
+            "end": "2016-05",
+            "location": "Pachuca Hidalgo, México",
+            "description": "Desarrollo del sistema de transmisión en vivo por internet.",
+            "responsibilities": [
+                "Implementación de sistema de streaming"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "Elian.ai",
+            "description": "Chatbot de WhatsApp que analiza imágenes de comida y proporciona información nutricional."
+        },
+        {
+            "name": "Dream Event",
+            "description": "Servicio de invitaciones digitales para eventos sociales y regalos sorpresa."
+        },
+        {
+            "name": "b-bot",
+            "description": "Bot empresarial multifuncional para gestión de ventas, reservaciones e información."
+        },
+        {
+            "name": "Nucleus",
+            "description": "Manejador de plantillas para desarrollo rápido y estandarizado de proyectos web."
+        },
+        {
+            "name": "Apiato",
+            "description": "Generador automático de APIs REST CRUD para SQL y NoSQL."
+        },
+        {
+            "name": "Apied-Piper",
+            "description": "Servicio para crear microservicios CRUD en un minuto."
+        }
+    ],
+    "languages": {
+        "es": {
+            "level": "Nativo"
+        },
+        "en": {
+            "level": "Intermedio",
+            "certification": "TOEFL ITP"
+        }
+    },
+    "recommendations": [
+        {
+            "name": "Antonio Rodríguez",
+            "company": "Habits.ai",
+            "text": "Erick es una persona con una gran mística y ética profesional. Además, posee amplios conocimientos en diferentes tecnologías y ejerciendo el cargo de CTO. Me siento muy a gusto de haber compartido mi experiencia laboral con él."
+        },
+        {
+            "name": "Yohan Beltrán",
+            "company": "UAEH",
+            "text": "Erick es una persona sumamente profesional y siempre dispuesta a realizar su trabajo con alta calidad. Además de ser un excelente miembro del equipo, su motivación y frescura son un aliciente para los demás miembros."
+        },
+        {
+            "name": "Sebastián Muñoz",
+            "company": "Habits.ai",
+            "text": "Erick es un excelente profesional y tiene un amplio conocimiento técnico. Trabajar con él es muy ameno y siempre estará dispuesto a dar una mano para ir a un siguiente nivel."
+        },
+        {
+            "name": "Jesús Salvador Ángeles de la Cruz",
+            "company": "SCT",
+            "text": "Erick sin duda fue un gran pilar en Habits. No solo por sus conocimientos y trabajo, sino también por su compañerismo y liderazgo. Siempre dispuesto a ayudar y dar lo mejor de él."
+        },
+        {
+            "name": "Claudia Pliego Vincent",
+            "company": "Habits.ai",
+            "text": "Erick fue un excelente compañero de trabajo en Habits. No solo por sus conocimientos y trabajo, sino también por su compañerismo y liderazgo. Siempre dispuesto a ayudar y dar lo mejor de él."
+        }
+    ]
+}

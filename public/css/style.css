@@ -1,0 +1,181 @@
+/* General Styles */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+/* Resume Styles */
+.resume-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.profile-photo {
+  max-width: 200px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Skills */
+.skill-item {
+  margin-bottom: 1rem;
+}
+
+.skill-item .progress {
+  height: 8px;
+  border-radius: 4px;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bs-primary);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px var(--bs-primary);
+}
+
+.timeline-item:before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 15px;
+  bottom: -40px;
+  width: 2px;
+  background: var(--bs-primary);
+}
+
+.timeline-item:last-child:before {
+  display: none;
+}
+
+/* Cards */
+.card {
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Buttons */
+.btn {
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+}
+
+.btn-lg {
+  padding: 0.75rem 2rem;
+}
+
+/* Social Links */
+.social-links .btn {
+  margin: 0.25rem;
+  min-width: 120px;
+}
+
+/* Metrics */
+.metrics .card {
+  background: rgba(var(--bs-primary-rgb), 0.05);
+}
+
+.metrics h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Banner */
+.banner {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.banner .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+/* Recommendations */
+.blockquote {
+  font-size: 1rem;
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-item {
+    padding-left: 2rem;
+  }
+  
+  .social-links .btn {
+    min-width: auto;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  
+  .metrics .card {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .navbar,
+  .footer,
+  .btn-download {
+    display: none !important;
+  }
+  
+  .resume-container {
+    padding: 0;
+  }
+  
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+  
+  .timeline-item:before {
+    background: #000 !important;
+  }
+  
+  .timeline-marker {
+    border-color: #000 !important;
+    box-shadow: none !important;
+  }
+}

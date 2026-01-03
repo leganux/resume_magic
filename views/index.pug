@@ -1,0 +1,110 @@
+extends layout
+
+block content
+  .container
+    .row.justify-content-center.mb-5
+      .col-md-10.text-center
+        h1.display-3.mb-4 Resume Magic
+        p.lead.mb-5 Create a beautiful, dynamic resume hosted on GitHub. Choose from multiple themes and languages, with automatic PDF generation.
+        
+        .d-flex.justify-content-center.gap-3
+          a.btn.btn-primary.btn-lg(href="/get-your-own")
+            i.fas.fa-rocket.me-2
+            | Get Started
+          a.btn.btn-outline-primary.btn-lg(href="https://github.com/leganux/resume" target="_blank")
+            i.fas.fa-eye.me-2
+            | View Example
+
+    .row.mb-5
+      .col-md-4.mb-4
+        .card.h-100
+          .card-body.text-center
+            i.fas.fa-code.fa-3x.text-primary.mb-3
+            h3.card-title JSON-Powered
+            p.card-text Store your resume data in clean, structured JSON files hosted in your GitHub repository.
+
+      .col-md-4.mb-4
+        .card.h-100
+          .card-body.text-center
+            i.fas.fa-paint-brush.fa-3x.text-primary.mb-3
+            h3.card-title Multiple Themes
+            p.card-text Choose between the minimal MIT theme or the modern theme with timeline and cards.
+
+      .col-md-4.mb-4
+        .card.h-100
+          .card-body.text-center
+            i.fas.fa-globe.fa-3x.text-primary.mb-3
+            h3.card-title Multi-Language
+            p.card-text Support for multiple language variants of your resume, perfect for international careers.
+
+    .row.mb-5
+      .col-md-6.mb-4
+        .card.h-100
+          .card-body
+            h3.card-title.mb-3 MIT Theme
+            p.card-text A clean, minimal design focusing on the essential information. Perfect for academic and traditional contexts.
+            .text-center.py-4
+              i.fas.fa-file-alt.fa-5x.text-primary
+
+      .col-md-6.mb-4
+        .card.h-100
+          .card-body
+            h3.card-title.mb-3 Modern Theme
+            p.card-text A contemporary design with timeline, cards, and visual elements. Ideal for creative and tech professionals.
+            .text-center.py-4
+              i.fas.fa-stream.fa-5x.text-primary
+
+    .row.mb-5
+      .col-md-12
+        .card
+          .card-body
+            h3.card-title.mb-4 How It Works
+            .row
+              .col-md-3.text-center.mb-4
+                .circle.mb-3
+                  span.h2 1
+                h4 Create Repository
+                p Create a GitHub repository to host your resume files
+
+              .col-md-3.text-center.mb-4
+                .circle.mb-3
+                  span.h2 2
+                h4 Add JSON Files
+                p Add your resume data in JSON format
+
+              .col-md-3.text-center.mb-4
+                .circle.mb-3
+                  span.h2 3
+                h4 Choose Theme
+                p Select between MIT and modern themes
+
+              .col-md-3.text-center.mb-4
+                .circle.mb-3
+                  span.h2 4
+                h4 Share URL
+                p Share your resume with a clean URL
+
+    .row.justify-content-center
+      .col-md-8.text-center
+        h2.mb-4 Ready to Create Your Resume?
+        p.mb-4 Get started in minutes with our easy-to-follow guide.
+        a.btn.btn-primary.btn-lg(href="/get-your-own")
+          i.fas.fa-rocket.me-2
+          | Create Your Resume
+
+block styles
+  style.
+    .circle {
+      width: 60px;
+      height: 60px;
+      background: var(--bs-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    .circle span {
+      color: white;
+      font-weight: bold;
+    }

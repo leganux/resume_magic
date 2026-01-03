@@ -1,0 +1,59 @@
+extends layout
+
+block content
+  .container
+    .row.justify-content-center
+      .col-md-8.text-center
+        .error-container.my-5
+          if title.includes('404')
+            i.fas.fa-search.fa-5x.text-muted.mb-4
+          else
+            i.fas.fa-exclamation-triangle.fa-5x.text-warning.mb-4
+          
+          h1.display-4.mb-4= title
+          p.lead.mb-4= message
+
+          if title.includes('404')
+            .suggestions.mb-5
+              h3.h4.mb-4 You might want to:
+              ul.list-unstyled
+                li.mb-3
+                  a.btn.btn-outline-primary(href="/")
+                    i.fas.fa-home.me-2
+                    | Go to Homepage
+                li.mb-3
+                  a.btn.btn-outline-primary(href="/get-your-own")
+                    i.fas.fa-rocket.me-2
+                    | Create Your Own Resume
+                li.mb-3
+                  a.btn.btn-outline-primary(href="https://github.com/leganux/resume" target="_blank")
+                    i.fas.fa-eye.me-2
+                    | View Example Resume
+
+          else
+            .mb-5
+              a.btn.btn-primary(href="/")
+                i.fas.fa-home.me-2
+                | Return to Homepage
+
+          .card.bg-light
+            .card-body
+              h3.h5.mb-3 Need Help?
+              p.mb-0 Check our 
+                a(href="/get-your-own") documentation
+                |  or visit our 
+                a(href="https://github.com/leganux/resume_magic/issues" target="_blank") GitHub repository
+                |  for support.
+
+block styles
+  style.
+    .error-container {
+      padding: 3rem 0;
+    }
+    .error-container i {
+      margin-bottom: 2rem;
+    }
+    .suggestions {
+      max-width: 400px;
+      margin: 0 auto;
+    }

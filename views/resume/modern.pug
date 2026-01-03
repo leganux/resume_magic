@@ -1,0 +1,244 @@
+extends ../layout
+
+block content
+    if settings && settings.alllow_pdf_dowload
+        .d-flex.justify-content-end.mb-3
+            a.btn.btn-primary.me-2(href=`/${username}/${repo}/download/pdf`)
+                i.fas.fa-download.me-2
+                | Download PDF
+
+    .resume-modern
+        // Header with banner and profile
+        if resume.profile.banner
+            .banner.mb-4(style=`background-image: url('${resume.profile.banner}')`)
+                .overlay
+
+        .container
+            .row.align-items-center.mb-5
+                .col-md-3.text-center
+                    if resume.profile.photography
+                        img.profile-photo.rounded-circle.mb-3(src=resume.profile.photography, alt=resume.profile.full_name)
+                .col-md-9
+                    h1.display-4= resume.profile.full_name
+                    h2.text-primary.mb-3= resume.profile.title
+                    p.lead.mb-4= resume.profile.summary
+
+                    .row.metrics.text-center.mb-4
+                        if resume.metrics
+                            .col-md-3.col-6.mb-3
+                                .card.bg-light
+                                    .card-body
+                                        h3.text-primary= resume.metrics.years_experience
+                                        p.mb-0 Years Experience
+                            .col-md-3.col-6.mb-3
+                                .card.bg-light
+                                    .card-body
+                                        h3.text-primary= resume.metrics.projects_completed
+                                        p.mb-0 Projects
+                            .col-md-3.col-6.mb-3
+                                .card.bg-light
+                                    .card-body
+                                        h3.text-primary= resume.metrics.clients
+                                        p.mb-0 Clients
+                            .col-md-3.col-6.mb-3
+                                .card.bg-light
+                                    .card-body
+                                        h3.text-primary= resume.metrics.tools_used
+                                        p.mb-0 Tools Used
+
+            // Contact & Social
+            .row.mb-5
+                .col-md-6
+                    .card.bg-light
+                        .card-body
+                            h3.card-title.border-bottom.pb-2 Contact Information
+                            ul.list-unstyled.mb-0
+                                if resume.contact.email
+                                    li.mb-2
+                                        i.fas.fa-envelope.me-2.text-primary
+                                        = resume.contact.email
+                                if resume.contact.phone
+                                    li.mb-2
+                                        i.fas.fa-phone.me-2.text-primary
+                                        = resume.contact.phone
+                                if resume.contact.website
+                                    li.mb-2
+                                        i.fas.fa-globe.me-2.text-primary
+                                        a(href=resume.contact.website)= resume.contact.website
+                .col-md-6
+                    .card.bg-light
+                        .card-body
+                            h3.card-title.border-bottom.pb-2 Social Media
+                            .social-links
+                                each url, platform in resume.contact.social
+                                    - const platformLower = platform.toLowerCase()
+                                    a.btn.btn-outline-primary.me-2.mb-2(href=url, target="_blank")
+                                        i.fab(class=`fa-${platformLower} me-1`)
+                                        = platform
+
+            // Skills Section with categories
+            .card.mb-5
+                .card-body
+                    h3.card-title.border-bottom.pb-2 Skills & Expertise
+                    .row
+                        - const skillCategories = [...new Set(resume.skills.map(s => s.category))]
+                        each category in skillCategories
+                            .col-md-6.mb-4
+                                h4.text-primary= category
+                                - const categorySkills = resume.skills.filter(s => s.category === category)
+                                each skill in categorySkills
+                                    .skill-item.mb-3
+                                        .d-flex.justify-content-between.mb-1
+                                            h5.mb-0= skill.name
+                                            span.text-muted #{skill.years_experience} years
+                                        .progress
+                                            .progress-bar.bg-primary(role="progressbar" style=`width: ${(skill.years_experience / 20) * 100}%`)
+
+            // Experience Timeline
+            .card.mb-5
+                .card-body
+                    h3.card-title.border-bottom.pb-2 Professional Experience
+                    .timeline
+                        each job, index in resume.experience
+                            .timeline-item
+                                .timeline-marker
+                                .timeline-content
+                                    .card.bg-light.mb-3
+                                        .card-body
+                                            h4.card-title= job.role
+                                            h5.text-primary= job.company
+                                            p.text-muted
+                                                | #{job.start} - #{job.end}
+                                                if job.location
+                                                    |  | #{job.location}
+                                            if job.description
+                                                p.mb-3= job.description
+                                            if job.responsibilities
+                                                h6.text-primary Key Responsibilities:
+                                                ul.list-styled
+                                                    each resp in job.responsibilities
+                                                        li= resp
+                                            if job.tools
+                                                .mt-3
+                                                    each tool in job.tools
+                                                        span.badge.bg-primary.me-2= tool
+
+            .row
+                .col-md-6
+                    // Education
+                    .card.mb-5
+                        .card-body
+                            h3.card-title.border-bottom.pb-2 Education
+                            each edu in resume.education
+                                .education-item.mb-4
+                                    h4= edu.degree
+                                    h5.text-primary= edu.institution
+                                    p.text-muted #{edu.start_year} - #{edu.end_year}
+
+                .col-md-6
+                    // Certifications
+                    if resume.certifications && resume.certifications.length
+                        .card.mb-5
+                            .card-body
+                                h3.card-title.border-bottom.pb-2 Certifications
+                                each cert in resume.certifications
+                                    .certification-item.mb-3
+                                        h5= cert.name
+                                        p.mb-0.text-primary
+                                            | #{cert.issuer}
+                                        p.text-muted
+                                            | #{cert.year}
+                                            if cert.id
+                                                |  - ID: #{cert.id}
+
+            // Projects
+            if resume.projects && resume.projects.length
+                .card.mb-5
+                    .card-body
+                        h3.card-title.border-bottom.pb-2 Notable Projects
+                        .row
+                            each project in resume.projects
+                                .col-md-6.mb-4
+                                    .card.h-100.bg-light
+                                        .card-body
+                                            h4.card-title= project.name
+                                            p.card-text= project.description
+
+            // Recommendations
+            if resume.recommendations && resume.recommendations.length
+                .card.mb-5
+                    .card-body
+                        h3.card-title.border-bottom.pb-2 Recommendations
+                        .row
+                            each rec in resume.recommendations
+                                .col-md-6.mb-4
+                                    .card.h-100.bg-light
+                                        .card-body
+                                            blockquote.blockquote.mb-0
+                                                p.mb-3= rec.text
+                                                footer.blockquote-footer
+                                                    | #{rec.name}
+                                                    if rec.company
+                                                        cite.ms-2 #{rec.company}
+
+block styles
+    style.
+        .banner {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .banner .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+        }
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 40px;
+        }
+        .timeline-marker {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--bs-primary);
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 3px var(--bs-primary);
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 15px;
+            bottom: -40px;
+            width: 2px;
+            background: var(--bs-primary);
+        }
+        .timeline-item:last-child:before {
+            display: none;
+        }
+        .skill-item .progress {
+            height: 8px;
+        }
+        .social-links .btn {
+            min-width: 120px;
+        }
