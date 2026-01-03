@@ -106,6 +106,9 @@ app.get('/:username/:repo/download/:type', async (req, res) => {
 
                 // Get format, language, and theme from query params
                 const { format, lang, theme } = req.query;
+                
+                // Default theme from query or settings
+                const selectedTheme = theme || 'flatly';
 
                 // Fetch resume data
                 const indexUrl = `https://raw.githubusercontent.com/${username}/${repo}/main/index.json`;
@@ -132,7 +135,7 @@ app.get('/:username/:repo/download/:type', async (req, res) => {
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <title>${resumeData.profile.full_name} - Resume</title>
-                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/${theme || indexData.settings?.theme || 'flatly'}/bootstrap.min.css">
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/${selectedTheme}/bootstrap.min.css">
                         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
                         <style>
                             ${fs.readFileSync(path.join(__dirname, 'public/css/style.css'), 'utf8')}
@@ -189,6 +192,9 @@ app.get('/:username/:repo/download/:type', async (req, res) => {
         } else if (type === 'html') {
             // Get format, language, and theme from query params
             const { format, lang, theme } = req.query;
+            
+            // Default theme from query or settings
+            const selectedTheme = theme || 'flatly';
 
             // Fetch resume data
             const indexUrl = `https://raw.githubusercontent.com/${username}/${repo}/main/index.json`;
@@ -215,7 +221,7 @@ app.get('/:username/:repo/download/:type', async (req, res) => {
                     <meta charset="UTF-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                     <title>${resumeData.profile.full_name} - Resume</title>
-                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/${theme || indexData.settings?.theme || 'flatly'}/bootstrap.min.css">
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/${selectedTheme}/bootstrap.min.css">
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
                     <style>
                         ${fs.readFileSync(path.join(__dirname, 'public/css/style.css'), 'utf8')}

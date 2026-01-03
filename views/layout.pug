@@ -10,6 +10,7 @@ html(lang="en")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css")
     script(src="/jquery/jquery.min.js")
     script(src="/bootstrap/js/bootstrap.bundle.min.js")
+    script(src="/js/preferences.js")
     block styles
   body
     nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
@@ -28,7 +29,7 @@ html(lang="en")
                   ul.dropdown-menu
                     each file, lang in resume.variants
                       li
-                        a.dropdown-item(href=`/${username}/${repo}/${format || ''}?lang=${lang}`)= lang.toUpperCase()
+                        a.dropdown-item.lang-select(href=`/${username}/${repo}/${format || ''}?lang=${lang}` data-lang=lang)= lang.toUpperCase()
               if resume.settings
                 li.nav-item.dropdown
                   a.nav-link.dropdown-toggle(href="#" role="button" data-bs-toggle="dropdown")
@@ -37,15 +38,15 @@ html(lang="en")
                   ul.dropdown-menu
                     each theme in ['cerulean', 'cosmo', 'cyborg', 'darkly', 'flatly', 'journal', 'litera', 'lumen', 'lux', 'materia', 'minty', 'morph', 'pulse', 'quartz', 'sandstone', 'simplex', 'sketchy', 'slate', 'solar', 'spacelab', 'superhero', 'united', 'vapor', 'yeti', 'zephyr']
                       li
-                        a.dropdown-item(href=`/${username}/${repo}/${format || ''}?theme=${theme}`)= theme
+                        a.dropdown-item.theme-select(href=`/${username}/${repo}/${format || ''}?theme=${theme}` data-theme=theme)= theme
                 if resume.settings.allow_pdf_download
                   li.nav-item
-                    a.btn.btn-primary.nav-link(href=`/${username}/${repo}/download/pdf?format=${format || ''}&lang=${lang || ''}`)
+                    a.btn.btn-primary.nav-link(href=`/${username}/${repo}/download/pdf?format=${format || ''}&lang=${lang || ''}&theme=${resume.settings.theme || 'flatly'}`)
                       i.fas.fa-file-pdf.me-2
                       | PDF
                 if resume.settings.allow_html_download
                   li.nav-item
-                    a.btn.btn-primary.nav-link(href=`/${username}/${repo}/download/html?format=${format || ''}&lang=${lang || ''}`)
+                    a.btn.btn-primary.nav-link(href=`/${username}/${repo}/download/html?format=${format || ''}&lang=${lang || ''}&theme=${resume.settings.theme || 'flatly'}`)
                       i.fas.fa-file-code.me-2
                       | HTML
             li.nav-item
