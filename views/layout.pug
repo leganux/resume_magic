@@ -3,7 +3,7 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title #{title} - Resume Magic
+    title #{title} - resume-hub.com
     - const theme = resume && resume.settings ? resume.settings.theme || 'flatly' : 'flatly'
     link(rel="stylesheet", href=`https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/${theme}/bootstrap.min.css`)
     link(rel="stylesheet", href="/css/style.css")
@@ -15,7 +15,7 @@ html(lang="en")
   body
     nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
       .container
-        a.navbar-brand(href="/") Resume Magic
+        a.navbar-brand(href="/") resume-hub.com
         button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarNav")
           span.navbar-toggler-icon
         #navbarNav.collapse.navbar-collapse

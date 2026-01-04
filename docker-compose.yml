@@ -3,7 +3,7 @@ services:
   resume-magic:
     build: .
     ports:
-      - "3000:3000"
+      - "1771:1771"
     environment:
       - BROWSERLESS_API_KEY=${BROWSERLESS_API_KEY}
       - BROWSERLESS_URL=${BROWSERLESS_URL}

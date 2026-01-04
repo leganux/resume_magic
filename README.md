@@ -1,4 +1,4 @@
-# Resume Magic
+# resume-hub.com
 
 A dynamic resume service that generates beautiful, customizable resumes from GitHub-hosted JSON data. Create professional resumes with multiple formats, themes, and language support.
 
